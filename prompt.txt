@@ -1,0 +1,20 @@
+Algorithm:
+1. Replace common words with their abbreviations, such as "and" -> "&", "with" -> "w/", "without" -> "w/o" etc.
+2. Remove vowels from words, except for the first letter, unless it's a single syllable word, an abbreviation, or a well-known acronym.
+3. For each word, check if there's a GPT token for that word. If not, try to expand the word by adding vowels or consonants.
+4. If the expanded word is still not a GPT token, consider using a different abbreviation or acronym for the word.
+5. For words that are still not GPT tokens, check if there's a shorter alternative or a synonym that is a GPT token and replace the original word with the shorter version.
+6. Check the GPT token to see if it contains any special characters, such as apostrophes or periods, and add them to the corresponding uncompressed word if needed.
+7. Reinsert spaces between words.
+8. Replace any remaining abbreviations with their full forms.
+
+# test algorithm
+
+#compress the following text:
+If disabled then a limited amount of ports will be used for improved security.
+
+#compression result:
+If dsbld thn a ltd amnt of prts will b used fr imprvd scurty.
+
+
+On average, 20% more tokens if you use the algorithm to compress / decompress your prompts
